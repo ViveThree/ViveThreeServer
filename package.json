@@ -1,0 +1,19 @@
+{
+  "name": "vive-three",
+  "version": "1.0.0",
+  "description": "ViveThree nodejs server",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViveThree/ViveThreeServer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViveThree/ViveThreeServer/issues"
+  },
+  "homepage": "https://github.com/ViveThree/ViveThreeServer#readme"
+}
