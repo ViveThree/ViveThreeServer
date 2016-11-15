@@ -2,11 +2,11 @@
   "name": "vive-three",
   "version": "1.0.0",
   "description": "ViveThree nodejs server",
-  "main": "index.js",
+  "main": "build/app.js",
   "scripts": {
     "test": "test.js",
-    "compile": "./node_modules/typescript/bin/tsc --outDir build ./src/* --strictNullChecks --noEmitOnError --noUnusedLocals --noUnusedParameters --forceConsistentCasingInFileNames --noFallthroughCasesInSwitch --noImplicitAny --pretty",
-    "watch": "./node_modules/typescript/bin/tsc --outDir build ./src/* --strictNullChecks --noEmitOnError --noUnusedLocals --noUnusedParameters --forceConsistentCasingInFileNames --noFallthroughCasesInSwitch --noImplicitAny --pretty --watch"
+    "compile": "./node_modules/typescript/bin/tsc -w",
+    "server": "./node_modules/nodemon/bin/nodemon.js -w build"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,16 @@
   },
   "homepage": "https://github.com/ViveThree/ViveThreeServer#readme",
   "devDependencies": {
+    "@types/bluebird": "^3.0.35",
+    "@types/express": "^4.0.34",
+    "@types/node": "^6.0.48",
+    "nodemon": "^1.11.0",
     "typescript": "^2.0.9"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "express": "^4.14.0",
+    "jade": "^1.11.0",
+    "pg-promise": "^5.3.5"
   }
 }

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "build",
+    "strictNullChecks": true,
+    "noEmitOnError": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "pretty": true,
+    "preserveConstEnums": true
+  },
+  "filesGlob": [
+      "./src/*.ts"
+  ]
+}
