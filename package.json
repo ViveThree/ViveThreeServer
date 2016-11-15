@@ -4,7 +4,9 @@
   "description": "ViveThree nodejs server",
   "main": "index.js",
   "scripts": {
-    "test": "test.js"
+    "test": "test.js",
+    "compile": "./node_modules/typescript/bin/tsc --outDir build ./src/* --strictNullChecks --noEmitOnError --noUnusedLocals --noUnusedParameters --forceConsistentCasingInFileNames --noFallthroughCasesInSwitch --noImplicitAny --pretty",
+    "watch": "./node_modules/typescript/bin/tsc --outDir build ./src/* --strictNullChecks --noEmitOnError --noUnusedLocals --noUnusedParameters --forceConsistentCasingInFileNames --noFallthroughCasesInSwitch --noImplicitAny --pretty --watch"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/ViveThree/ViveThreeServer/issues"
   },
-  "homepage": "https://github.com/ViveThree/ViveThreeServer#readme"
+  "homepage": "https://github.com/ViveThree/ViveThreeServer#readme",
+  "devDependencies": {
+    "typescript": "^2.0.9"
+  }
 }
