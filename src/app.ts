@@ -25,7 +25,7 @@ class Server {
     app.set('views', './views')
     app.set('view engine', 'pug')
 
-    const port = app.get('port') || 8080;
+    const port = process.env.PORT || 8080;
     app.set('port', port);
 
     app.listen(port, () => {

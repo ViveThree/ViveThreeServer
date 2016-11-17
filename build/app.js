@@ -19,7 +19,7 @@ var Server = (function () {
         app.use(router);
         app.set('views', './views');
         app.set('view engine', 'pug');
-        var port = app.get('port') || 8080;
+        var port = process.env.PORT || 8080;
         app.set('port', port);
         app.listen(port, function () {
             console.log("Running on port " + port + "!");
