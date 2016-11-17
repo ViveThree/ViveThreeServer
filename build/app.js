@@ -19,8 +19,10 @@ var Server = (function () {
         app.use(router);
         app.set('views', './views');
         app.set('view engine', 'pug');
-        app.listen(8080, function () {
-            console.log("Running on port 8080!");
+        var port = app.get('port') || 8080;
+        app.set('port', port);
+        app.listen(port, function () {
+            console.log("Running on port " + port + "!");
         });
     }
     // Convert our promise-based routes back to express-compatible callback functions

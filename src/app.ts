@@ -25,8 +25,11 @@ class Server {
     app.set('views', './views')
     app.set('view engine', 'pug')
 
-    app.listen(8080, () => {
-      console.log("Running on port 8080!");
+    const port = app.get('port') || 8080;
+    app.set('port', port);
+
+    app.listen(port, () => {
+      console.log(`Running on port ${port}!`);
     });
   }
 
