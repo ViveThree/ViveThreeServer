@@ -19,6 +19,14 @@ body {
   color: #333;
 }
 
+.nav.navbar-nav > li > a:hover {
+  color: #777;
+}
+
+.navbar.navbar-default {
+  margin-bottom: 0;
+}
+
 .navbar .vive-brand {
   height: inherit;
 }
@@ -32,10 +40,6 @@ body {
 .navbar.navbar-default {
   background-color: ghostwhite;
   border-color: ghostwhite;
-}
-
-.vive-navbar .navbar-nav {
-  margin-top: 10px;
 }
 
 .logo.large {
