@@ -6,33 +6,55 @@ html(lang='en')
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(href="https://fonts.googleapis.com/css?family=Lusitana|Montserrat:700" rel="stylesheet")
     link(href="/vendor/css/bootstrap.css" rel="stylesheet")
     link(href="/static/css/application.css" rel="stylesheet")
     block css
 
   body
     .navbar.navbar-default.navbar-static-top
-      .container
+      .container-fluid
         .navbar-header
-          a(href="/")
-            .navbar-brand VIVE THREE
+          a.logo-link(href="/")
+            .navbar-brand.vive-brand
+              .logo.large VIVE
+              .logo.small THREE
           button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
             span.sr-only Toggle Navigation
             span.icon-bar
             span.icon-bar
             span.icon-bar
-        .navbar.navbar-collapse.collapse
-          ul.nav.navbar-nav
-            li
-              a(href="/about") How it works
-            li
-              a(href="/buy") Buy
+        .navbar.navbar-collapse.collapse.vive-navbar
           ul.nav.navbar-nav.navbar-right
             li
-              a(href="/login") Login
+              a(href="/about") HOW IT WORKS
+            li
+              a(href="/buy") BUY
+            li
+              a(href="/login") LOGIN
+            li
+              a(href="/#")
+                span.glyphicon.glyphicon-shopping-cart
 
-    .container
-      block content
+    .content
+      .container
+        block content
+      block after
+
+
+    footer.footer
+      .container
+        .footer-links
+          .logo
+            a(href="/") VIVE THREE
+          .other-links
+            .footer-link
+              a(href="/about") HOW IT WORKS
+            .footer-link
+              a(href="/buy") BUY
+            .footer-link
+              a(href="/login") LOGIN
+            .copyright © Vive Three 2016.  All rights reserved.
 
     .javascripts
       script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript")

@@ -1,4 +1,26 @@
 extends layout.pug
 
+block css
+  link(href="/static/css/index.css" rel="stylesheet")
+
 block content
-  h1 Welcome!
+  .top-banner.text-center
+    h1 Haircare Redefined
+    a(href="/buy")
+      button.btn.btn-large.shop-button PREORDER &rarr;
+  .about-panels
+    .about-panel.col-md-4.text-center
+      .about-img
+        img(src="/vendor/images/shampoo.png")
+      .about-text We sell shampoo so your hair is all clean.
+    .about-panel.col-md-4.text-center
+      .about-img
+        img(src="/vendor/images/conditioner.png")
+      .about-text We sell conditioner so hair is soft and shiny.
+    .about-panel.col-md-4.text-center
+      .about-img
+        img(src="/vendor/images/hairstuff.png")
+      .about-text We also sell other things that people put in their hair.
+
+block after
+  .splash-image
