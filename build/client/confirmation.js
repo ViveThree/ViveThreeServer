@@ -14,7 +14,7 @@ var orderData = {
     currency: order.currency,
     lineItems: order.line_items
 };
-var url = "http://www.vivethree.com/confirm";
+var url = "https://www.vivethree.com/confirm";
 var request = new XMLHttpRequest();
 request.open('POST', url, true);
 request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
