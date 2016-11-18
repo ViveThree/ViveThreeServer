@@ -1,7 +1,8 @@
 "use strict";
 
 import * as express from "express";
- import * as bodyParser from "body-parser";
+import * as bodyParser from "body-parser";
+import * as cors from "cors";
 import * as StaticRoutes from "./routes/static";
 import * as PurchaseRoutes from "./routes/purchase";
 import * as UserRoutes from "./routes/user";
@@ -21,7 +22,12 @@ class Server {
     router.get("/about", this.promisifyRoute(StaticRoutes.about));
     router.get("/login", this.promisifyRoute(UserRoutes.login));
     router.get("/buy", this.promisifyRoute(PurchaseRoutes.buy));
-    router.get("/confirm", this.promisifyRoute(PurchaseRoutes.confirm));
+
+    const corsOptions = {
+      origin: "https://shop.trycelery.com",
+      optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+    };
+    router.get("/confirm", cors(corsOptions), this.promisifyRoute(PurchaseRoutes.confirm));
 
     // Static Routes
     app.use("/static/js", express.static(path.join(__dirname, '../build/client')))

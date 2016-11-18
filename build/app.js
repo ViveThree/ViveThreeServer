@@ -1,6 +1,7 @@
 "use strict";
 var express = require("express");
 var bodyParser = require("body-parser");
+var cors = require("cors");
 var StaticRoutes = require("./routes/static");
 var PurchaseRoutes = require("./routes/purchase");
 var UserRoutes = require("./routes/user");
@@ -17,7 +18,11 @@ var Server = (function () {
         router.get("/about", this.promisifyRoute(StaticRoutes.about));
         router.get("/login", this.promisifyRoute(UserRoutes.login));
         router.get("/buy", this.promisifyRoute(PurchaseRoutes.buy));
-        router.get("/confirm", this.promisifyRoute(PurchaseRoutes.confirm));
+        var corsOptions = {
+            origin: "https://shop.trycelery.com",
+            optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+        };
+        router.get("/confirm", cors(corsOptions), this.promisifyRoute(PurchaseRoutes.confirm));
         // Static Routes
         app.use("/static/js", express.static(path.join(__dirname, '../build/client')));
         app.use("/static", express.static(path.join(__dirname, '../static')));

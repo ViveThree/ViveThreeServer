@@ -2,6 +2,9 @@
 
 declare var App: any;
 
+interface celeryOrderData {
+}
+
 const order = App.getOrder({version: 'v1'});
 
 const orderData = {
