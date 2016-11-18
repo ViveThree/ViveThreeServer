@@ -2,12 +2,31 @@
 
 declare var App: any;
 
-interface celeryOrderData {
+interface CeleryItem {
+  product_id: string;
+  product_name: string;
+  sku: string;
+  quantity: number;
+}
+
+interface CeleryOrder {
+  orderNumber: string;
+  buyerEmail: string;
+  buyerFirstName: string;
+  buyerLastName: string;
+  subtotal: number;
+  discount: number;
+  shipping: number;
+  taxes: number;
+  total: number;
+  discountCode: string;
+  currency: string;
+  lineItems: CeleryItem[];
 }
 
 const order = App.getOrder({version: 'v1'});
 
-const orderData = {
+const orderData: CeleryOrder = {
   orderNumber: order.number,
   buyerEmail: order.buyer.email,
   buyerFirstName: order.buyer.first_name,

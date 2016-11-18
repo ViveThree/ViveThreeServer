@@ -7,8 +7,8 @@ var PurchaseRoutes;
     }
     PurchaseRoutes.buy = buy;
     function confirm(req, res) {
-        console.log("order data", req.body.orderData);
-        res.json({ success: true });
+        var order = req.body.orderData;
+        res.json({ received: order });
         return Promise.resolve(null);
     }
     PurchaseRoutes.confirm = confirm;

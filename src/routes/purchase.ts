@@ -8,8 +8,8 @@ module PurchaseRoutes {
   }
 
   export function confirm(req: express.Request, res: express.Response): Promise<any> {
-    console.log("order data", req.body.orderData);
-    res.json({ success: true });
+    let order: CeleryOrder = req.body.orderData;
+    res.json({ received: order });
     return Promise.resolve(null);
   }
 }
