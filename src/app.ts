@@ -27,7 +27,8 @@ class Server {
       origin: "https://shop.trycelery.com",
       optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
     };
-    router.get("/confirm", cors(corsOptions), this.promisifyRoute(PurchaseRoutes.confirm));
+    router.options("/confirm", cors(corsOptions));
+    router.post("/confirm", cors(corsOptions), this.promisifyRoute(PurchaseRoutes.confirm));
 
     // Static Routes
     app.use("/static/js", express.static(path.join(__dirname, '../build/client')))
